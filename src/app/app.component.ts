@@ -1,16 +1,25 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <h1>Universal Demo using Angular and Angular CLI</h1>
-  <a routerLink="/">Home</a>
-  <a routerLink="/lazy">Lazy</a>
-  <a routerLink="/lazy/nested">Lazy_Nested</a>
-  <router-outlet></router-outlet>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
+  constructor(meta: Meta, title: Title) {
+
+    title.setTitle('One Call For It All | Colorado Construction Equipment Rental Co.');
+
+    meta.addTags([
+      { name: 'brand',   content: 'One Call For It All'},
+      { name: 'location',   content: 'Castle Rock Colorado'},
+      { name: 'keywords', content: 'construction industrial equipment rental, multi quip whisperwatt, indirect fired heater, Generac LED Light Tower, Generac generator'},
+      { name: 'description', content: 'equipment rental Denver, Generators, Heaters, Ground Thaw, Light Towers, rentals' }
+    ]);
+
+  }
+
 }
+
